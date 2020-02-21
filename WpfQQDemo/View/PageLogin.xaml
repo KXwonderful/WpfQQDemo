@@ -1,0 +1,53 @@
+﻿<Window x:Class="WpfQQDemo.View.PageLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:WpfQQDemo.View"
+        mc:Ignorable="d"
+        Title="LoginPage" Height="520" Width="350">
+    <Grid>
+        <TextBlock Text="WPF MVVM的例子" />
+        <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth2" Width="350" Height="520" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <Ellipse Cursor="Hand" HorizontalAlignment="Center" Margin="10 5" Width="150" Height="150">
+                    <Ellipse.Fill>
+                        <ImageBrush  ImageSource="/Images/head0.jpg" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock FontSize="20" Text="请登录"  HorizontalAlignment="Center"/>
+                <WrapPanel VerticalAlignment="Center" Margin="0 10">
+                    <TextBlock
+                    Width="50"
+                    Margin="10"
+                    TextAlignment="Center"
+                    Text="用户名" />
+                    <TextBox
+                    Width="200"
+                    Margin="10"
+                    Text="{Binding User.UserName}" />
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock
+                    Width="50"
+                    Margin="10"
+                    TextAlignment="Center"
+                    Text="密码" />
+                    <TextBox
+                    Width="200"
+                    Margin="10"
+                    Text="{Binding User.UserPwd}" />
+                </WrapPanel>
+                <Button
+                Height="40"
+                Margin="20"
+                Command="{Binding LoginCommand}"
+                CommandParameter="{Binding ElementName=wd}"
+                Content="登录" />
+            </StackPanel>
+        </materialDesign:Card>
+            
+    </Grid>
+</Window>

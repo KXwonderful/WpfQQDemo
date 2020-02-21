@@ -1,0 +1,261 @@
+﻿<Window x:Class="WpfQQDemo.View.PageHome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:WpfQQDemo.View"
+        mc:Ignorable="d"
+        WindowChrome.WindowChrome="{DynamicResource WindowChromeKey}" AllowsTransparency="True" WindowStyle="None"
+        Title="PageHome" Height="800" Width="1100">
+
+    <Window.Resources>
+        <WindowChrome x:Key="WindowChromeKey">
+            <WindowChrome.ResizeBorderThickness>
+                <Thickness>0</Thickness>
+            </WindowChrome.ResizeBorderThickness>
+        </WindowChrome>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="706*"/>
+        </Grid.RowDefinitions>
+
+        <!-- *********************** 头部工具栏 ************************** -->
+        <Grid Grid.Row="0">
+            <materialDesign:ColorZone Mode="PrimaryMid" Name="NavBar" Height="65" MouseLeftButtonDown="NavBar_MouseLeftButtonDown" materialDesign:ShadowAssist.ShadowDepth="Depth3">
+                <Grid>
+                    <!-- 背景 第三个几何图形-->
+                    <Polygon Points="780,0 1100,0 1100,65 723,65 " StrokeThickness="1">
+                        <Polygon.Fill>
+                            <SolidColorBrush Color="#3448A1" />
+                        </Polygon.Fill>
+                    </Polygon>
+                    <!-- 背景 第二个几何图形-->
+                    <Polygon Points="700,0 780,0 740,50 " StrokeThickness="1">
+                        <Polygon.Fill>
+                            <SolidColorBrush Color="#3E58C9" />
+                        </Polygon.Fill>
+                    </Polygon>
+                    <!-- 背景 第一个几何图形-->
+                    <Polygon Points="0,0 700,0 756,65 0,65" StrokeThickness="1">
+                        <Polygon.Fill>
+                            <SolidColorBrush Color="#1C93EC" />
+                        </Polygon.Fill>
+                    </Polygon>
+
+                    <!-- 左侧 头像 -->
+                    <Ellipse Cursor="Hand" HorizontalAlignment="Left" Margin="10 5" Width="50" Height="50">
+                        <Ellipse.Fill>
+                            <ImageBrush  ImageSource="/Images/head0.jpg" />
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <!-- 中间三个按钮相关 -->
+                    <Grid HorizontalAlignment="Center" Width="200">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <Button Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" materialDesign:ShadowAssist.ShadowDepth="Depth1" Padding="0">
+                                <Viewbox Width="30" Height="30">
+                                    <Canvas Width="24" Height="24">
+                                        <Path Data="M17,12V3A1,1 0 0,0 16,2H3A1,1 0 0,0 2,3V17L6,13H16A1,1 0 0,0 17,12M21,6H19V15H6V17A1,1 0 0,0 7,18H18L22,22V7A1,1 0 0,0 21,6Z"
+                                              Fill="White" />
+                                    </Canvas>
+                                </Viewbox>
+                            </Button>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <Button Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" materialDesign:ShadowAssist.ShadowDepth="Depth1" Padding="0">
+                                <Viewbox Width="30" Height="30">
+                                    <Canvas Width="24" Height="24">
+                                        <Path Data="M16.5,12A2.5,2.5 0 0,0 19,9.5A2.5,2.5 0 0,0 16.5,7A2.5,2.5 0 0,0 14,9.5A2.5,2.5 0 0,0 16.5,12M9,11A3,3 0 0,0 12,8A3,3 0 0,0 9,5A3,3 0 0,0 6,8A3,3 0 0,0 9,11M16.5,14C14.67,14 11,14.92 11,16.75V19H22V16.75C22,14.92 18.33,14 16.5,14M9,13C6.67,13 2,14.17 2,16.5V19H9V16.75C9,15.9 9.33,14.41 11.37,13.28C10.5,13.1 9.66,13 9,13Z"
+                                              Fill="White" />
+                                    </Canvas>
+                                </Viewbox>
+                            </Button>
+                        </Grid>
+
+                        <Grid Grid.Column="3">
+                            <Button Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" materialDesign:ShadowAssist.ShadowDepth="Depth1" Padding="0">
+                                <Viewbox Width="30" Height="30">
+                                    <Canvas Width="24" Height="24">
+                                        <Path Data="M19,16A3,3 0 0,0 22,13A3,3 0 0,0 19,10H17.5V9.5A5.5,5.5 0 0,0 12,4C9.5,4 7.37,5.69 6.71,8H6A4,4 0 0,0 2,12A4,4 0 0,0 6,16V11H18V16H19M19.36,8.04C21.95,8.22 24,10.36 24,13A5,5 0 0,1 19,18H18V22H6V18A6,6 0 0,1 0,12C0,8.91 2.34,6.36 5.35,6.04C6.6,3.64 9.11,2 12,2C15.64,2 18.67,4.6 19.36,8.04M8,13V20H16V13H8M9,18H15V19H9V18M15,17H9V16H15V17M9,14H15V15H9V14Z"
+                                              Fill="White" />
+                                    </Canvas>
+                                </Viewbox>
+                            </Button>
+                        </Grid>
+                    </Grid>
+
+
+                    <!-- 右侧四个按钮相关 -->
+                    <Grid HorizontalAlignment="Right" Width="150">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <Button Height="60" Background="{x:Null}" BorderBrush="{x:Null}" materialDesign:ShadowAssist.ShadowDepth="Depth1" Padding="0">
+                                <Viewbox Width="25" Height="25">
+                                    <Canvas Width="24" Height="24">
+                                        <Path Data="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"
+                                              Fill="White"/>
+                                    </Canvas>
+                                </Viewbox>
+                            </Button>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <Button Height="60" Background="{x:Null}" BorderBrush="{x:Null}" materialDesign:ShadowAssist.ShadowDepth="Depth1" Padding="0" Click="MinWindow">
+                                <Viewbox Width="25" Height="25">
+                                    <Canvas Width="24" Height="24">
+                                        <Path Data="M20,14H4V10H20"
+                                              Fill="White"/>
+                                    </Canvas>
+                                </Viewbox>
+                            </Button>
+                        </Grid>
+
+                        <Grid Grid.Column="2">
+                            <Button Height="60" Background="{x:Null}" BorderBrush="{x:Null}" materialDesign:ShadowAssist.ShadowDepth="Depth1" Padding="0" Click="MaxWindow">
+                                <Viewbox Width="25" Height="25">
+                                    <Canvas Width="24" Height="24">
+                                        <Path Data="M4,4H20V20H4V4M6,8V18H18V8H6Z"
+                                              Fill="White"/>
+                                    </Canvas>
+                                </Viewbox>
+                            </Button>
+                        </Grid>
+
+                        <Grid Grid.Column="3">
+                            <Button Height="60" Background="{x:Null}" BorderBrush="{x:Null}" materialDesign:ShadowAssist.ShadowDepth="Depth1" Command="{Binding CloseCommand}" Padding="0">
+                                <Viewbox Width="25" Height="25">
+                                    <Canvas Width="24" Height="24">
+                                        <Path Data="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+                                              Fill="White"/>
+                                    </Canvas>
+                                </Viewbox>
+                            </Button>
+                        </Grid>
+                    </Grid>
+
+                </Grid>
+            </materialDesign:ColorZone>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="157*"/>
+                <ColumnDefinition Width="389*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- *********************** 好友列表 *********************** -->
+            <Grid Grid.Column="0" Background="#FAFAFA">
+                <!-- 好友列表 -->
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                          Cursor="Hand" Name="FriendList" ItemsSource="{Binding Friends}">
+
+                    <!-- item 点击事件 -->
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding SelectItemChangeCommand}" CommandParameter="{Binding ElementName=FriendList}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Height="50">
+
+                                <Ellipse Cursor="Hand" Width="50" Height="50">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{Binding Head}"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="5 0">
+                                    <TextBlock FontSize="15" Foreground="Black" Text="{Binding Nickname}"/>
+                                    <TextBlock Margin="0 2 0 0" FontSize="12" Text="这家伙很懒,什么也没留下"/>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+                <!-- 悬浮按钮 -->
+                <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}" 
+                                         PlacementMode="TopAndAlignCentres" ToolTipService.Placement="Left" ToolTip="Wonderful QQ" 
+                                         HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20">
+
+                </materialDesign:PopupBox>
+            </Grid>
+
+            <!-- *********************** 名片、对话框等 *********************** -->
+            <Grid Grid.Column="1" Background="White">
+
+                <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth2" Width="350" Height="520" VerticalAlignment="Center">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Image Stretch="UniformToFill" Source="{Binding Head}"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <Button Style="{StaticResource MaterialDesignFloatingActionButton}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 -30 5 0" 
+                                BorderBrush="{x:Null}" ToolTip="修改资料">
+                                <materialDesign:PackIcon Kind="Pencil" Width="25" Height="25"/>
+                            </Button>
+
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding Nickname}" HorizontalAlignment="Center" FontSize="35" Margin="0 20 0 0"/>
+
+                                <StackPanel Orientation="Horizontal" Margin="80 5 0 0">
+                                    <TextBlock Text="账号  " Foreground="#B7B7B7"/>
+                                    <TextBlock Text="1414***513"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="80 5 0 0">
+                                    <TextBlock Text="昵称  " Foreground="#B7B7B7"/>
+                                    <TextBlock Text="二货兴业"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="80 5 0 0">
+                                    <TextBlock Text="手机  " Foreground="#B7B7B7"/>
+                                    <TextBlock Text="183********"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="80 5 0 0">
+                                    <TextBlock Text="邮箱  " Foreground="#B7B7B7"/>
+                                    <TextBlock Text="1414***513@qq.com"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="80 5 0 0">
+                                    <TextBlock Text="职业  " Foreground="#B7B7B7"/>
+                                    <TextBlock Text="计算机/互联网/通信"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="80 5 0 0">
+                                    <TextBlock Text="空间  " Foreground="#B7B7B7"/>
+                                    <TextBlock Text="二货兴业的空间"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </materialDesign:Card>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
